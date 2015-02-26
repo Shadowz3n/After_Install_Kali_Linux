@@ -36,7 +36,7 @@ else
 	git clone https://github.com/sqlmapproject/sqlmap > /dev/null
 fi
 
-if [ -d /opt/google]
+if [ -d /opt/google ]
 then
 	echo -e "${bold}${green}Google Chrome [OK]{reset}"
 else
