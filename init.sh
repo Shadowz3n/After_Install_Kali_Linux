@@ -44,12 +44,12 @@ else
 	if [ `getconf LONG_BIT` = "64" ]
 	then
 		echo -e "${red}${bold}[Downloading]${reset}  ${green}Google Chrome${reset}"
-		wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb > /dev/null
+		wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb > /dev/null
 		echo -e "${bold}${green}[Installing]${reset} ${green}Google Chrome${reset}"
 		dpkg -i google-chrome-stable_current_amd64.deb > /dev/null
 	else
 		echo -e "${red}${bold}[Downloading]${reset}  ${green}Google Chrome${reset}" 
-		wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb > /dev/null
+		wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb > /dev/null
 		echo -e "${bold}${green}[Installing]${reset} ${green}Google Chrome${reset}"
 		dpkg -i google-chrome-stable_current_i386.deb > /dev/null
 	fi
