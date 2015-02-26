@@ -33,7 +33,7 @@ then
 else
 	cd /opt
 	echo -e "${red}${bold}[Downloading]${reset}  ${green}SQLMap${reset}"
-	git clone https://github.com/sqlmapproject/sqlmap > /dev/null
+	git clone -q https://github.com/sqlmapproject/sqlmap > /dev/null
 fi
 
 if [ -d /opt/google ]
