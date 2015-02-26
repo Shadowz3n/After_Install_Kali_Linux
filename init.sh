@@ -18,8 +18,7 @@ deb http://http.kali.org/kali kali main contrib non-free
 deb http://http.kali.org/kali kali main/debian-installer
 deb-src http://http.kali.org/kali kali main contrib non-free
 deb http://security.kali.org/kali-security kali/updates main contrib non-free
-deb-src http://security.kali.org/kali-security kali/updates main contrib non-free 
-deb http://download.virtualbox.org/virtualbox/debian wheezy contrib
+deb-src http://security.kali.org/kali-security kali/updates main contrib non-free
 EOF
 
 mv /tmp/first_time_kali_file.sh /etc/apt/sources.list
