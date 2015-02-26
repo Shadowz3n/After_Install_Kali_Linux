@@ -27,16 +27,16 @@ mv /tmp/first_time_kali_file.sh /etc/apt/sources.list
 echo -e "${red}${bold}[Updating]${reset}	${green}/etc/apt/sources.list ${reset}"
 apt-get update > /dev/null
 
-if [ -f /opt/sqlmap ]
+if [ -d /opt/sqlmap ]
 then
 	echo -e "${bold}${green}SQLMap [OK]${reset}"
 else
 	cd /opt
 	echo -e "${red}${bold}[Downloading]${reset}  ${green}SQLMap${reset}"
-	git clone https://github.com/sqlmapproject/sqlmap
+	git clone https://github.com/sqlmapproject/sqlmap > /dev/null
 fi
 
-if [ -f /opt/google]
+if [ -d /opt/google]
 then
 	echo -e "${bold}${green}Google Chrome [OK]{reset}"
 else
@@ -44,14 +44,14 @@ else
 	if [ `getconf LONG_BIT` = "64" ]
 	then
 		echo -e "${red}${bold}[Downloading]${reset}  ${green}Google Chrome${reset}"
-		wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+		wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb > /dev/null
 		echo -e "${bold}${green}[Installing]${reset} ${green}Google Chrome${reset}"
-		dpkg -i google-chrome-stable_current_amd64.deb
+		dpkg -i google-chrome-stable_current_amd64.deb > /dev/null
 	else
 		echo -e "${red}${bold}[Downloading]${reset}  ${green}Google Chrome${reset}" 
-		wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+		wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb > /dev/null
 		echo -e "${bold}${green}[Installing]${reset} ${green}Google Chrome${reset}"
-		dpkg -i google-chrome-stable_current_i386.deb
+		dpkg -i google-chrome-stable_current_i386.deb > /dev/null
 	fi
 fi
 echo -e "${bold}${green}Google Chrome [OK]${reset}"
