@@ -40,20 +40,22 @@ then
 	echo -e "${bold}${green}Google Chrome [OK]{reset}"
 else
 	cd /tmp
+	
+	function get_google_chrome(deb){
+		echo -e "${red}${bold}[Downloading]${reset}  ${green}Google Chrome${reset}"
+		wget -q "https://dl.google.com/linux/direct/${deb}
+		echo -e "${bold}${green}[Installing]${reset} ${green}Google Chrome${reset}"
+		dpkg -i ${deb} > /dev/null
+		echo -e "${bold}${green}Google Chrome [OK]${reset}"
+	}
+	
 	if [ `getconf LONG_BIT` = "64" ]
 	then
-		echo -e "${red}${bold}[Downloading]${reset}  ${green}Google Chrome${reset}"
-		wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb > /dev/null
-		echo -e "${bold}${green}[Installing]${reset} ${green}Google Chrome${reset}"
-		dpkg -i google-chrome-stable_current_amd64.deb > /dev/null
+		get_google_chrome("google-chrome-stable_current_amd64.deb")
 	else
-		echo -e "${red}${bold}[Downloading]${reset}  ${green}Google Chrome${reset}" 
-		wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb > /dev/null
-		echo -e "${bold}${green}[Installing]${reset} ${green}Google Chrome${reset}"
-		dpkg -i google-chrome-stable_current_i386.deb > /dev/null
+		get_google_chrome("google-chrome-stable_current_i386.deb")
 	fi
 fi
-echo -e "${bold}${green}Google Chrome [OK]${reset}"
 
 echo -e "${bold}${green}[Kali Linux is Ready]${reset}"
 tput bel
